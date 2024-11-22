@@ -37,24 +37,36 @@ function mergesort(arr) {
   const end = arr.length;
   const mid = Math.ceil(end / 2);
   const newArr1 = arr.slice(0, mid);
-  const newArr2 = arr.slice(start, end);
-  const nextArr1 = mergesort(newArr1);
+  const newArr2 = arr.slice(mid, end);
+  const nextArr1 = mergesort(newArr1); // 6,1
   const nextArr2 = mergesort(newArr2);
 
-  return buuble(newArr1, newArr2);
   function bubble(arr1, arr2) {
-    let i = 0;
-    let j = 0;
-    let sort
-    while (i < arr1.lnegth && i < arr2.length) {
-      if( arr1[j] < arr2[j]){
-        sort.push(arr1[j])
-      }
-
-    }
+    let numSort = [...arr1, ...arr2]
+    function compareNumbers(a, b) {
+    return a - b;
   }
+    numSort.join()
+    numSort.sort()
+    numSort.sort(compareNumbers)
+    return numSort
+  }
+  return bubble(nextArr1, nextArr2);
 }
 
-mergesort([29, 52, 37, 108, 88, 197, 46]);
+const tik = mergesort([3, 2, 1, 13, 8, 5, 0, 1]);
+console.log(tik);
 
-// 5 in the arr we divide by 2
+// function bubble(arr1, arr2) {
+//   let numSort = [...arr1, ...arr2]
+//   function compareNumbers(a, b) {
+//   return a - b;
+// }
+//   numSort.join()
+//   numSort.sort()
+//   numSort.sort(compareNumbers)
+//   return numSort
+// }
+// const change = bubble([12,3,1,6], [15,7])
+
+// console.log(change);
